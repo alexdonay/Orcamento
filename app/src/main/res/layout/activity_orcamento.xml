@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categoria"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_text_loja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loja" />
+
+        <EditText
+            android:id="@+id/edit_text_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Valor" />
+
+        <EditText
+            android:id="@+id/edit_text_pagamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pagamento" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observação"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_text_observacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observação" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <Button
+            android:id="@+id/btn_Tira_Foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tirar Foto"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_Salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/fotoTirada"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+
+    </LinearLayout>
+
+</ScrollView>
