@@ -41,23 +41,17 @@ public class DetalhesActivity extends AppCompatActivity {
         DBAdapter db = new DBAdapter(this);
         db.open();
         int idCategoria2 = getIntent().getIntExtra("item",0);
-
-
         Cursor cursor = db.extraiOrcamentoPorCategoria(idCategoria2);
-        MatrixCursor cursor2 = new MatrixCursor(new String[] {"_id", "loja", "valor", "formaPagto", "descricao", "foto", "categoria"});
-
-        /*cursor.addRow(new Object[] {1, "loja", 125, "formaPagto", "descricao", "foto", 1});*/
-
         ArrayList<Orcamento> listaOrcamentos = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
-                int id = cursor.getInt(cursor.getColumnIndex("_id"));
-                String loja = cursor.getString(cursor.getColumnIndex("loja"));
-                double valor = cursor.getDouble(cursor.getColumnIndex("valor"));
-                String formaPagto = cursor.getString(cursor.getColumnIndex("formaPgto"));
-                String descricao = cursor.getString(cursor.getColumnIndex("descricao"));
-                String fotoPath = cursor.getString(cursor.getColumnIndex("foto"));
-                int idCategoria = cursor.getInt(cursor.getColumnIndex("IDCategoria"));
+                @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex("_id"));
+                @SuppressLint("Range") String loja = cursor.getString(cursor.getColumnIndex("loja"));
+                @SuppressLint("Range") double valor = cursor.getDouble(cursor.getColumnIndex("valor"));
+                @SuppressLint("Range") String formaPagto = cursor.getString(cursor.getColumnIndex("formaPgto"));
+                @SuppressLint("Range") String descricao = cursor.getString(cursor.getColumnIndex("descricao"));
+                @SuppressLint("Range") String fotoPath = cursor.getString(cursor.getColumnIndex("foto"));
+                @SuppressLint("Range") int idCategoria = cursor.getInt(cursor.getColumnIndex("IDCategoria"));
                 Orcamento orcamento = new Orcamento(id, loja, valor, formaPagto, descricao, fotoPath, idCategoria);
                 listaOrcamentos.add(orcamento);
             } while (cursor.moveToNext());
@@ -68,8 +62,5 @@ public class DetalhesActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Não foi possível obter os dados do banco de dados.", Toast.LENGTH_SHORT).show();
         }
-
-
     }
-
 }
