@@ -20,11 +20,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class XCamera {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private Context mContext;
-    private String mCurrentPhotoPath;
-    private Uri mPhotoURI;
+    private final Context mContext;
+
+
     private String currentPhotoPath;
     public XCamera(Context context) {
         mContext = context;
@@ -50,7 +51,7 @@ public class XCamera {
     }
 
     private File createImageFile() throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
